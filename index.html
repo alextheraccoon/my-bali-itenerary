@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bali for Two 🌺 7-Day Relax, Temples &amp; Surf Itinerary</title>
+<style>
+  :root {
+    --teal: #0e7c86;
+    --teal-dark: #075b63;
+    --turquoise: #2ec4b6;
+    --coral: #ff6f59;
+    --sunset: #ffb347;
+    --sand: #fdf3e2;
+    --palm: #2f9e44;
+    --ink: #1c3b3a;
+    --card-shadow: 0 10px 25px rgba(14, 124, 134, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  a { color: var(--teal-dark); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 20px 90px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--turquoise) 55%, var(--sunset) 100%);
+  }
+
+  .hero::before {
+    content: "🌴";
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.18;
+    top: -30px;
+    left: -20px;
+    transform: rotate(-15deg);
+  }
+
+  .hero::after {
+    content: "🌺";
+    position: absolute;
+    font-size: 7rem;
+    opacity: 0.2;
+    bottom: -30px;
+    right: -10px;
+    transform: rotate(20deg);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 10px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  }
+
+  .hero p.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    max-width: 640px;
+    margin: 0 auto 20px;
+    opacity: 0.95;
+  }
+
+  .hero .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .badge:nth-child(1) { background: linear-gradient(120deg, #ff6f59, #ff9a3d); }
+  .badge:nth-child(2) { background: linear-gradient(120deg, #ffb347, #ffe27a); color: #5c3a00; }
+  .badge:nth-child(3) { background: linear-gradient(120deg, #2f9e44, #6fd08c); }
+  .badge:nth-child(4) { background: linear-gradient(120deg, #ff5da2, #ff8fc7); }
+  .badge:nth-child(5) { background: linear-gradient(120deg, #1d7a8c, #2ec4b6); }
+
+  .wave-divider {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    margin-top: -6px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fffdf8;
+    border-bottom: 3px solid var(--turquoise);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--teal-dark);
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover {
+    background: var(--coral);
+    color: #fff;
+  }
+
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+
+  h2.section-title {
+    text-align: center;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+
+  p.section-lead {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    color: #4a5a59;
+  }
+
+  /* ---------- Travel tips ---------- */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+
+  .tip-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--sunset);
+  }
+
+  .tip-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--coral);
+  }
+
+  .tip-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #3d4d4c;
+  }
+
+  /* ---------- Day cards ---------- */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+  }
+
+  .day-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .day-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(14, 124, 134, 0.28);
+  }
+
+  .day-card .day-header {
+    padding: 18px 22px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, var(--teal), var(--turquoise));
+  }
+
+  .day-card.surf .day-header { background: linear-gradient(120deg, #1d7a8c, var(--turquoise)); }
+  .day-card.temple .day-header { background: linear-gradient(120deg, var(--coral), var(--sunset)); }
+  .day-card.relax .day-header { background: linear-gradient(120deg, var(--palm), var(--turquoise)); }
+
+  .day-header .day-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+
+  .day-header .day-loc {
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.95;
+  }
+
+  .day-body {
+    padding: 20px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .day-body h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--teal-dark);
+  }
+
+  .schedule {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .schedule li {
+    font-size: 0.92rem;
+    padding-left: 4px;
+  }
+
+  .schedule li strong {
+    color: var(--coral);
+    display: inline-block;
+    min-width: 88px;
+  }
+
+  .stay-meals {
+    font-size: 0.88rem;
+    background: var(--sand);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+
+  .stay-meals p { margin: 4px 0; }
+
+  .day-budget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    background: #f0faf9;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* ---------- Budget table ---------- */
+  .budget-table-wrap {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+  }
+
+  table.budget {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 640px;
+  }
+
+  table.budget th, table.budget td {
+    padding: 12px 16px;
+    text-align: right;
+    font-size: 0.95rem;
+  }
+
+  table.budget th:first-child, table.budget td:first-child,
+  table.budget th:nth-child(2), table.budget td:nth-child(2) {
+    text-align: left;
+  }
+
+  table.budget thead th {
+    background: var(--teal);
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+
+  table.budget tbody tr:nth-child(even) { background: #f4faf9; }
+
+  table.budget tfoot td {
+    font-weight: 800;
+    background: var(--sunset);
+    color: #fff;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    color: #fff;
+  }
+
+  footer p { margin: 6px 0; opacity: 0.9; }
+  footer .emoji-row { font-size: 1.6rem; margin-top: 10px; letter-spacing: 6px; }
+
+  @media (max-width: 500px) {
+    table.budget th, table.budget td { padding: 8px 10px; font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>🌊 Bali for Two 🌺</h1>
+    <p class="subtitle">A 7-day escape blending sunrise surf sessions, sacred temples, and slow, romantic relaxation — designed around a $500/day budget for accommodation, activities &amp; food.</p>
+    <div class="badges">
+      <span class="badge">🏄 Surf</span>
+      <span class="badge">⛩️ Temples</span>
+      <span class="badge">🧘 Relaxation</span>
+      <span class="badge">💰 $500/day</span>
+      <span class="badge">💑 Couples</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#tips">Travel Tips</a>
+    <a href="#itinerary">Day-by-Day</a>
+    <a href="#budget">Budget</a>
+  </nav>
+
+  <section id="tips">
+    <h2 class="section-title">🧳 Before You Go: Travel Tips</h2>
+    <p class="section-lead">A few essentials to make the trip smoother, cheaper, and more respectful of local culture.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>🌤️ Best Time to Visit</h3>
+        <p>April–October (dry season) offers the best surf swells and clearest temple views. May–June and September are less crowded with great weather.</p>
+      </div>
+      <div class="tip-card">
+        <h3>🚗 Getting Around</h3>
+        <p>Hire a private driver for full days (~$45–60/day) between regions, and rent a scooter (~$6/day) for short local hops in Ubud or Canggu.</p>
+      </div>
+      <div class="tip-card">
+        <h3>⛩️ Temple Etiquette</h3>
+        <p>Bring or rent a sarong and sash (often included with entry). Cover shoulders/knees, and avoid entering during ceremonies if menstruating, per local custom.</p>
+      </div>
+      <div class="tip-card">
+        <h3>🏄 Surf Safety</h3>
+        <p>Book a certified instructor for the first sessions (~$35–45/hr for two), start at beginner-friendly beach breaks like Batu Bolong before Uluwatu's reef breaks.</p>
+      </div>
+      <div class="tip-card">
+        <h3>💵 Money &amp; Payments</h3>
+        <p>Carry cash (IDR) for warungs and temple donations; cards work at villas/resorts. Negotiate politely at markets — it's expected.</p>
+      </div>
+      <div class="tip-card">
+        <h3>📶 SIM &amp; Connectivity</h3>
+        <p>Grab a local eSIM/SIM (Telkomsel) on arrival at the airport for ~$10–15 — handy for maps, ride-hailing, and booking activities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="itinerary">
+    <h2 class="section-title">🗓️ Day-by-Day Itinerary</h2>
+    <p class="section-lead">Three bases keep travel time low while covering surf, temples, and relaxation: Uluwatu/Bingin → Ubud → Seminyak/Canggu.</p>
+    <div class="days-grid">
+
+      <article class="day-card surf">
+        <div class="day-header">
+          <span class="day-num">Day 1</span>
+          <span class="day-loc">🏄 Uluwatu / Bingin</span>
+        </div>
+        <div class="day-body">
+          <h4>Arrival &amp; Cliffside Sunset</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Airport pickup by private driver, transfer to Bingin/Uluwatu (~1 hr).</li>
+            <li><strong>Afternoon:</strong> Check in, relax by the villa pool, easy walk down to Bingin Beach.</li>
+            <li><strong>Evening:</strong> Sunset dinner at a cliff-top warung overlooking the surf breaks.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Cliff-top boutique villa with private pool</p>
+            <p><strong>🍽️ Meals:</strong> Beachside seafood BBQ, fresh coconuts</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$480</span></div>
+        </div>
+      </article>
+
+      <article class="day-card surf">
+        <div class="day-header">
+          <span class="day-num">Day 2</span>
+          <span class="day-loc">🏄⛩️ Uluwatu</span>
+        </div>
+        <div class="day-body">
+          <h4>Surf Lesson &amp; Uluwatu Temple Sunset</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Beginner-friendly surf lesson with instructor at Padang Padang or Dreamland.</li>
+            <li><strong>Afternoon:</strong> Poolside relaxation, couples massage at the villa spa.</li>
+            <li><strong>Evening:</strong> Uluwatu Temple (Pura Luhur Uluwatu) at sunset + traditional Kecak fire dance.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Same cliff-top villa</p>
+            <p><strong>🍽️ Meals:</strong> Local warung lunch, fine-dining Indonesian dinner</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$500</span></div>
+        </div>
+      </article>
+
+      <article class="day-card temple">
+        <div class="day-header">
+          <span class="day-num">Day 3</span>
+          <span class="day-loc">⛩️ Ubud</span>
+        </div>
+        <div class="day-body">
+          <h4>Transfer &amp; Sacred Water Temple</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Scenic drive to Ubud (~1.5 hrs), stop at Tanah Lot en route (optional).</li>
+            <li><strong>Afternoon:</strong> Check into rice-terrace villa, visit Tirta Empul holy water temple for a purification ritual.</li>
+            <li><strong>Evening:</strong> Relaxed dinner overlooking the jungle, early night.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Jungle/rice-terrace private-pool villa</p>
+            <p><strong>🍽️ Meals:</strong> Organic farm-to-table dinner</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$470</span></div>
+        </div>
+      </article>
+
+      <article class="day-card relax">
+        <div class="day-header">
+          <span class="day-num">Day 4</span>
+          <span class="day-loc">🧘 Ubud</span>
+        </div>
+        <div class="day-body">
+          <h4>Spa Day &amp; Rice Terraces</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Sunrise yoga, stroll through Tegallalang Rice Terraces.</li>
+            <li><strong>Afternoon:</strong> Full couples spa package — floral bath, massage, body scrub.</li>
+            <li><strong>Evening:</strong> Traditional Legong dance performance + dinner in central Ubud.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Same Ubud villa</p>
+            <p><strong>🍽️ Meals:</strong> Café brunch, riverside fine dining</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$500</span></div>
+        </div>
+      </article>
+
+      <article class="day-card temple">
+        <div class="day-header">
+          <span class="day-num">Day 5</span>
+          <span class="day-loc">⛩️ Ubud &amp; Volcano Region</span>
+        </div>
+        <div class="day-body">
+          <h4>Temples, Waterfalls &amp; Coffee</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Visit Gunung Kawi and Goa Gajah (Elephant Cave) temples.</li>
+            <li><strong>Afternoon:</strong> Tegenungan Waterfall, Balinese coffee/cacao plantation tour.</li>
+            <li><strong>Evening:</strong> Sunset views from a hillside restaurant near Kintamani.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Same Ubud villa</p>
+            <p><strong>🍽️ Meals:</strong> Plantation-side lunch, mountain-view dinner</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$460</span></div>
+        </div>
+      </article>
+
+      <article class="day-card surf">
+        <div class="day-header">
+          <span class="day-num">Day 6</span>
+          <span class="day-loc">🏄 Canggu / Seminyak</span>
+        </div>
+        <div class="day-body">
+          <h4>Transfer, Surf &amp; Beach Clubs</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Drive to Canggu (~1 hr), check into beachfront villa.</li>
+            <li><strong>Afternoon:</strong> Second surf session at Batu Bolong or Echo Beach.</li>
+            <li><strong>Evening:</strong> Sunset cocktails and dinner at a beach club (e.g. La Brisa-style venue).</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Beachfront villa with plunge pool</p>
+            <p><strong>🍽️ Meals:</strong> Beach club tapas &amp; cocktails</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$500</span></div>
+        </div>
+      </article>
+
+      <article class="day-card temple">
+        <div class="day-header">
+          <span class="day-num">Day 7</span>
+          <span class="day-loc">⛩️ Tanah Lot &amp; Departure</span>
+        </div>
+        <div class="day-body">
+          <h4>Iconic Sea Temple &amp; Farewell</h4>
+          <ul class="schedule">
+            <li><strong>Morning:</strong> Leisurely breakfast, last swim/relax at the villa.</li>
+            <li><strong>Afternoon:</strong> Visit Tanah Lot Temple, Bali's iconic sea-cliff temple.</li>
+            <li><strong>Evening:</strong> Farewell dinner in Seminyak, private transfer to the airport.</li>
+          </ul>
+          <div class="stay-meals">
+            <p><strong>🏡 Stay:</strong> Day-use / late checkout</p>
+            <p><strong>🍽️ Meals:</strong> Celebratory farewell dinner</p>
+          </div>
+          <div class="day-budget"><span>Daily total</span><span>$490</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="budget">
+    <h2 class="section-title">💰 7-Day Budget Breakdown</h2>
+    <p class="section-lead">All figures are for the couple combined (2 people), per day, in USD.</p>
+    <div class="budget-table-wrap">
+      <table class="budget">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Location</th>
+            <th>Accommodation</th>
+            <th>Activities</th>
+            <th>Food</th>
+            <th>Daily Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Uluwatu / Bingin</td><td>$300</td><td>$60</td><td>$120</td><td>$480</td></tr>
+          <tr><td>2</td><td>Uluwatu</td><td>$300</td><td>$110</td><td>$90</td><td>$500</td></tr>
+          <tr><td>3</td><td>Ubud</td><td>$280</td><td>$70</td><td>$120</td><td>$470</td></tr>
+          <tr><td>4</td><td>Ubud</td><td>$280</td><td>$140</td><td>$80</td><td>$500</td></tr>
+          <tr><td>5</td><td>Ubud</td><td>$280</td><td>$90</td><td>$90</td><td>$460</td></tr>
+          <tr><td>6</td><td>Canggu / Seminyak</td><td>$320</td><td>$70</td><td>$110</td><td>$500</td></tr>
+          <tr><td>7</td><td>Tanah Lot / Seminyak</td><td>$0 (checkout)</td><td>$40</td><td>$150</td><td>$490</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Total (7 days)</td><td>$3,400</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Selamat jalan!</strong> Wishing you sun-soaked surf, sacred temples, and total relaxation. 🌅</p>
+    <div class="emoji-row">🌺 🏄 ⛩️ 🧘 🌊</div>
+  </footer>
+
+</body>
+</html>
