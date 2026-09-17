@@ -83,12 +83,20 @@
   .badge {
     background: rgba(255,255,255,0.22);
     backdrop-filter: blur(3px);
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.5);
     padding: 8px 18px;
     border-radius: 999px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
+
+  .badge:nth-child(1) { background: linear-gradient(120deg, #ff6f59, #ff9a3d); }
+  .badge:nth-child(2) { background: linear-gradient(120deg, #ffb347, #ffe27a); color: #5c3a00; }
+  .badge:nth-child(3) { background: linear-gradient(120deg, #2f9e44, #6fd08c); }
+  .badge:nth-child(4) { background: linear-gradient(120deg, #ff5da2, #ff8fc7); }
+  .badge:nth-child(5) { background: linear-gradient(120deg, #1d7a8c, #2ec4b6); }
 
   .wave-divider {
     display: block;
